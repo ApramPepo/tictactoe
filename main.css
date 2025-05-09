@@ -1,0 +1,5 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+}
