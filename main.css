@@ -60,3 +60,7 @@ input {
     justify-content: center;
     align-items: center;
 }
+
+#status {
+    margin-bottom: 2rem;
+}

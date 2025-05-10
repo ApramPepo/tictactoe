@@ -50,7 +50,6 @@ const controller = (() => {
         gameboard.resetBoard();
         updateDisplay();
         updateGameStatus(`${players[currentPlayerIndex].getName()}'s turn`);
-        document.querySelectorAll('.menu').style.display = 'none';
     };
 
     const cellClick = (e) => {
@@ -90,7 +89,16 @@ const controller = (() => {
     const init = () => {
         document.getElementById('start').addEventListener('click', startGame);
         document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', cellClick));
+        document.getElementById('restart').addEventListener('click', reset);
     };
+
+    const reset = () => {
+        gameboard.resetBoard();
+        gameActive = false;
+        currentPlayerIndex = 0;
+        updateDisplay();
+        updateGameStatus('');
+    }
 
     return { init };
 })();
